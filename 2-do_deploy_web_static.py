@@ -4,6 +4,9 @@ import os
 from fabric.api import runs_once, local
 from datetime import datetime
 
+env.hosts = ["100.25.14.197", "100.25.221.118"]
+env.user = "ubuntu"
+
 def do_deploy(archive_path):
     """Deploy the static files to the servers."""
     if not os.path.exists(archive_path):
