@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/python3
 """Distributes an archive to the web servers.
 """
 import os
