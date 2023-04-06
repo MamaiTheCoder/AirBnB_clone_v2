@@ -11,6 +11,7 @@
 #	Give ownership of the /data/ folder to the ubuntu user AND group
 #	Update the Nginx configuration to serve the content of /data/web_static/current/ to hbnb_static
 
+
 SERVER_CONFIG="server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
