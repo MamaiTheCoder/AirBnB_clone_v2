@@ -68,5 +68,5 @@ class FileStorage:
                     self.all()[key] = classes[val['__class__']](**val)
 
     def close(self):
-        """Closes the storage engine."""
+        """Close the storage engine."""
         self.reload()
