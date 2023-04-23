@@ -5,10 +5,9 @@ A script that starts a Flask web application.
 From flask import Flask
 
 app = Flask(__name__)
-app.url_map.strict_slashes = Flask
 
 
-@app.route('/')
+@app.route('/', strict_slashes=False)
 def index():
     """ Display “Hello HBNB!” """
     return 'Hello HBNB!'
