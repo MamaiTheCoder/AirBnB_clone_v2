@@ -29,14 +29,15 @@ def c_pg(text):
     return 'C {}'.format(text.replace('_', ' '))
 
 
-@app.route('/python/(<text>)')
-@app.route('/python', defaults={'text': 'is cool'})
-def python_page(text):
+@app.route('/python/')
+@app.route('/python/<text>')
+def python_text(text='is cool'):
     """ Display “Python ”, followed by the value of the text variable.
     (replace underscore _ symbols with a space )
     """
-    return 'Python {}'.format(text.replace('_', ' '))
-
+    if text is not 'is cool':
+        text = text.replace('_', ' ')
+    return 'Python %s' % text
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='5000')
