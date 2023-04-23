@@ -8,15 +8,18 @@ from flask import Flask
 app = Flask(__name__)
 app.url_map.strict_slashes = False
 
+
 @app.route('/')
 def index():
     """Displays “Hello HBNB!”"""
     return 'Hello HBNB!'
 
+
 @app.route('/hbnb')
 def hbnb():
     """Dislays “HBNB”."""
     return 'HBNB'
+
 
 @app.route('/c/<text>')
 def c_pg(text):
@@ -24,6 +27,7 @@ def c_pg(text):
     (replace underscore _ symbols with a space )
     """
     return 'C {}'.format(text.replace('_', ' '))
+
 
 @app.route('/python/(<text>)')
 @app.route('/python', defaults={'text': 'is cool'})
@@ -33,10 +37,12 @@ def python_page(text):
     """
     return 'Python {}'.format(text.replace('_', ' '))
 
-@app.route(/number/<int: n>)
+
+@app.route('/number/<int: n>')
 def num_only(n):
     """Display “n is a number” only if n is an integer."""
-    return  '{}'.format(n)
+    return '{}'.format(n)
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='5000')
