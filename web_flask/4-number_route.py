@@ -33,7 +33,7 @@ def c_pg(text):
 @app.route('/python/<text>')
 def python_text(text='is cool'):
     """ Display “Python ”, followed by the value of the text variable.
-    (replace underscore _ symbols with a space ) 
+    (replace underscore _ symbols with a space )
     """
     if text is not 'is cool':
         text = text.replace('_', ' ')
